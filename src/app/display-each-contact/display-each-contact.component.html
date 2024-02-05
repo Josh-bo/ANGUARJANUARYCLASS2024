@@ -1,0 +1,93 @@
+<app-navbar></app-navbar>
+<div class="mt-5 pt-5 container">
+    <div class="row">
+        <div class="col-6 shadow-lg mb-5">
+            <div class="text-info fw-bold fs-5 mt-3 text-center"> Each User's Details</div><hr>
+    
+              <div class="p-2" *ngFor="let item of displayArray, let i = index">
+                <div class="d-flex justify-content-between mt-2">
+                  <span class="fw-bold">First Name</span>
+                  <span>{{item.firstName}}</span>
+                </div><hr>
+    
+                <div class="d-flex justify-content-between mt-2">
+                  <span class="fw-bold">Last Name</span>
+                  <span>{{item.lastName}}</span>
+                </div><hr>
+                
+                <div class="d-flex justify-content-between mt-2">
+                  <span class="fw-bold">email</span>
+                  <span>{{item.email}}</span>
+                </div><hr>
+    
+                <div class="d-flex justify-content-between mt-2">
+                  <span class="fw-bold">Phone Number</span>
+                  <span>{{item.phNumb}}</span>
+                </div><hr>
+    
+                <div class="d-flex justify-content-between mt-2">
+                  <span class="fw-bold">Address</span>
+                  <span>{{item.ha}}</span>
+                </div><hr>
+    
+                <div class="d-flex justify-content-between mt-2">
+                  <span class="fw-bold">Gender</span>
+                  <span>{{item.gender}}</span>
+                </div><hr>
+    
+                <div class="d-flex justify-content-between mt-5">
+                    <button class="btn btn-warning" (click)="editUser()">EDIT USER</button>
+                    <button class="btn btn-danger" (click)="deleteUser(getIndex)">DELETE USER</button>
+                </div>
+
+                <div class="mt-1">
+                    <button class="btn btn-dark w-100 my-3" (click)="back()">BACK</button>
+                 </div>
+              </div>
+    
+        </div>
+
+        <div class="col-6 shadow-lg mb-5" *ngIf="confirmation">
+            <div class="text-info fw-bold fs-5 mt-3 text-center"> Edit User's Details</div>
+            <hr>
+        
+            <div class="ps-3 pe-3">
+                <div class="mt-2">
+                    <input type="text" name="" id="" class="form-control" placeholder="First Name" [(ngModel)]="firstName">
+                </div>
+                <hr>
+        
+                <div class="mt-2">
+                    <input type="text" name="" id="" class="form-control" placeholder="Last Name" [(ngModel)]="lastName">
+                </div>
+                <hr>
+        
+                <div class="mt-2">
+                    <input type="text" name="" id="" class="form-control" placeholder="Email" [(ngModel)]="email">
+                </div>
+                <hr>
+        
+                <div class="mt-2">
+                    <input type="text" name="" id="" class="form-control" placeholder="Phone Number" [(ngModel)]="phone">
+                </div>
+                <hr>
+        
+                <div class="mt-2">
+                    <input type="text" name="" id="" class="form-control" placeholder="Address" [(ngModel)]="address">
+                </div>
+                <hr>
+        
+                <div class="mt-2">
+                    <input type="text" name="" id="" class="form-control" placeholder="Gender" [(ngModel)]="gender">
+                </div>
+                <hr>
+        
+                <div class="pb-4">
+                    <button class="btn btn-warning w-100" (click)="confirm(getIndex)">CONFIRM</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+<div class="container mt-5 pt-5">
+    <div class="row mx-auto text-center">
+        <div class="col-sm-12 col-md-6 col-lg-6 mx-auto p-3 border shadow-lg rounded">
+            <h2>SIGN UP</h2><hr>
+            <div class="alert alert-danger" *ngIf="confirm">{{getError}}</div>
+
+            <input type="text" class="form-control my-2" placeholder="First-name" [(ngModel)]="firstName">
+            <input type="text" class="form-control my-2" placeholder="last-name" [(ngModel)]="lastName">
+            <input type="email" class="form-control my-2" placeholder="email" [(ngModel)]="email">
+            <input type="text" class="form-control my-2" placeholder="address" [(ngModel)]="address">
+            <input type="number" class="form-control my-2" placeholder="phoneNumber" [(ngModel)]="phoneNumber">
+            <input type="text" class="form-control my-2" placeholder="password" [(ngModel)]="password">
+            <button class="btn btn-warning w-100" (click)="signUp()">SUBMIT</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+.middlePage{
+    background: linear-gradient(to left top, black, rgb(210, 67, 91));
+}
+*{
+    font-family: 'Courier New', Courier, monospace;
+}
+.angular{
+    font-size: 100px;
+}
+.imgTop{
+    margin-bottom: -1rem !important;
+}

@@ -1,0 +1,95 @@
+<app-navbar></app-navbar>
+<div class="mt-5 pt-2">
+  <div class="container mt-5">
+    <div class="col-6 mx-auto border rounded-2 p-4">
+      <h4 class="text-center text-info mb-4">TEMPLATE DRIVEN FORM</h4>
+      <hr style="margin-top: -20px" />
+
+      <form #allForms="ngForm">
+        <div class="row">
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <input
+              type="text"
+              class="form-control my-2"
+              placeholder="Full Name"
+              [(ngModel)]="fullName"
+              name="fullName"
+              #fname="ngModel"
+              required
+              [class.is-valid]="fname.valid && fname.dirty"
+              [class.is-invalid]="fname.invalid && fname.dirty"
+              minlength="5"
+            />
+
+            <div *ngIf="fname.invalid && fname.touched">
+              <span
+                *ngIf="fname?.errors?.['required']"
+                class="text-center text-danger small"
+                >This field is required</span
+              >
+              <span
+                *ngIf="fname?.errors?.['minlength']"
+                class="text-center text-danger small"
+                >The minimum length is 5</span
+              >
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <input
+              type="text"
+              class="form-control my-2"
+              placeholder="City"
+              [(ngModel)]="city"
+              name="city"
+              #cityName="ngModel"
+              required
+              [class.is-valid]="cityName.valid && cityName.dirty"
+              [class.is.invalid]="cityName.invalid && cityName.dirty"
+              minlength="5"
+            />
+
+            <div *ngIf="cityName.invalid && cityName.touched">
+              <span
+                *ngIf="cityName?.errors?.['required']"
+                class="text-center text-danger small"
+                >This field is required</span
+              >
+              <span
+                *ngIf="cityName?.errors?.['minlength']"
+                class="text-center text-danger small"
+                >The minimum length is 3</span>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <input type="checkbox" class="my-2" [(ngModel)]="conMe" name="conMe" #newId="ngModel" [class.is-touched]="newId.touched" required>
+            <span class="text-primary small2">Terms and condition</span>
+            <div *ngIf="newId.touched">
+              <span class="text-center text-danger small" *ngIf="!newId.valid">Condition is required</span>
+            </div>
+          </div>
+
+          <!-- <div>valid: {{newId.valid}}</div>
+          <div>dirty: {{newId.dirty}}</div>
+          <div>pristine: {{newId.pristine}}</div>
+          <div>touched: {{newId.touched}}</div>
+          <div>untouched: {{newId.untouched}}</div> -->
+          
+
+    
+          <button
+            class="btn btn-success w-100 my-3"
+            [disabled]="allForms.invalid"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="fixed-bottom">
+  <app-footer></app-footer>
+</div>
