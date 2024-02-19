@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+<div class="mt-5 pt-5 container">
+    <div><span class="text-danger">uppercase</span> {{'agriculture' | uppercase}}</div>
+    <div><span class="text-success">lowercase</span> {{'HOME' | lowercase}}</div>
+    <div><span class="text-warning">Date</span> {{newDate | date}}</div>
+    <div><span class="text-primary"> Date Short </span>{{newDate | date:'short' }}</div>
+    <div><span class="text-success"> Date Long </span>{{newDate | date:'long' }}</div>
+    <div><span class="text-danger">Date full </span>{{newDate | date:'full' }}</div>
+    <div><span class="text-primary">Date shortTime</span> {{newDate | date:'shortTime' }}</div>
+    <div><span class="text-danger"> Date longTime</span> {{newDate | date:'longTime' }}</div>
+    <div><span class="text-warning">Date fullTime </span>{{newDate | date:'fullTime' }}</div>
+    <div>Date shortDate {{newDate | date:'shortDate' }}</div>
+    <div>Date longDate {{newDate | date:'longDate' }}</div>
+    <div>Date fullDate {{newDate | date:'fullDate' }}</div>
+    <div>Date D - M - Y {{newDate | date:'d/M/Y' }}</div>
+
+    Currentcy
+    <div>Currency USD{{10000 | currency }}</div>
+    <div>Euro {{10000 | currency:'EUR' }}</div>
+    <div>Nigeria {{10000 | currency:'NGN' }}</div>
+    <div>Nigeria {{10000 | currency:'NGN':'symbol-narrow' }}</div>
+    <div> {{10000 | currency:'GBP' }}</div>
+    <!-- <div>Canadian dols {{10000 | currency:'CAD' }}</div> -->
+    <!-- <div> {{10000 | currency:'YEN' }}</div> -->
+
+    SLICE
+    <p>{{'Investment' | slice:2:6}}</p>
+</div>

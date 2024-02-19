@@ -1,0 +1,81 @@
+<app-navbar></app-navbar>
+<div class="mt-5 pt-2">
+  <div class="container mt-5">
+    <div class="col-6 mx-auto border rounded-2 p-4">
+      <h4 class="text-center text-success mb-4">REACTIVE DRIVEN FORM</h4>
+      <hr style="margin-top: -20px" />
+
+      <form [formGroup]="formOne" #go="ngForm">
+        <div class="row">
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <input
+              type="text"
+              class="form-control my-2"
+              placeholder="Full name"
+              required
+              formControlName="fullName"
+              minlength="10"
+              [class.is-valid]="formOne.get('fullName')?.valid && formOne.get('fullName')?.dirty"
+              [class.is-invalid]="formOne.get('fullName')?.invalid && formOne.get('fullName')?.touched"
+            />
+
+            <div *ngIf="formOne.get('fullName')?.invalid && formOne.get('fullName')?.touched">
+                <span *ngIf="formOne.get('fullName')?.errors?.['required']" class="text-danger small">Full-name is required</span>
+                <span *ngIf="formOne.get('fullName')?.errors?.['minlength']" class="text-danger small">Minimum length must be 10</span>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <input
+              type="type"
+              class="form-control my-2"
+              placeholder="email"
+              required
+              formControlName="email"
+              [class.is-valid]="formOne.get('email')?.valid && formOne.get('email')?.dirty"
+              [class.is-invalid]="formOne.get('email')?.invalid && formOne.get('email')?.touched"
+            />
+            <div *ngIf="formOne.get('email')?.invalid && formOne.get('email')?.touched">
+                <span *ngIf="formOne.get('email')?.errors?.['required']" class="text-danger small">Email is required</span>
+                <span *ngIf="formOne.get('email')?.errors?.['email']" class="text-danger small">Enter a valid email</span>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <input
+              type="password"
+              class="form-control my-2"
+              placeholder="Password"
+              required
+              minlength="5"
+              formControlName="password"
+              [class.is-valid]="formOne.get('password')?.valid && formOne.get('password')?.dirty"
+              [class.is-invalid]="formOne.get('password')?.invalid && formOne.get('password')?.touched"
+            />
+            <div *ngIf="formOne.get('password')?.invalid && formOne.get('password')?.touched">
+                <span *ngIf="formOne.get('password')?.errors?.['required']" class="text-danger small">Password is required</span>
+                <span *ngIf="formOne.get('password')?.errors?.['minlength']" class="text-danger small">Minimum length must be 5</span>
+            </div>
+          </div>
+
+          <!-- <div class="col-sm-12 col-md-6 col-lg-6">
+            <input type="checkbox" class="my-2" name="conMe" required />
+            <span class="text-primary small2 mx-2">Terms and condition</span>
+          </div> -->
+
+          <button
+            class="w-100 my-3 text-light border-0 p-2 rounded btn btn-success"
+            [disabled]="go.invalid"
+
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="fixed-bottom">
+  <app-footer></app-footer>
+</div>

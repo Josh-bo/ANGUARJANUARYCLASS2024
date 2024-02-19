@@ -1,0 +1,282 @@
+<app-navbar></app-navbar>
+<div class="mt-5 pt-2">
+  <div class="container mt-5">
+    <div class="col-6 mx-auto border rounded-2 p-4">
+      <span class="mx-2 fw-bold text-success">1</span>
+      <span class="mx-2 fw-bold text-warning">2</span>
+      <span class="mx-2 fw-bold text-danger">3</span>
+    </div>
+    <div class="col-6 mx-auto border rounded-2 p-4" *ngIf="formForm1">
+      <!-- <hr /> -->
+      <h4 class="text-center text-success mb-4">FORM ONE</h4>
+      <hr style="margin-top: -20px" />
+
+      <form [formGroup]="formOne" #go="ngForm">
+        <div class="row">
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <input
+              type="text"
+              class="form-control my-2"
+              placeholder="Full name"
+              required
+              formControlName="fullName"
+              minlength="10"
+              [class.is-valid]="
+                formOne.get('fullName')?.valid && formOne.get('fullName')?.dirty
+              "
+              [class.is-invalid]="
+                formOne.get('fullName')?.invalid &&
+                formOne.get('fullName')?.touched
+              "
+            />
+
+            <div
+              *ngIf="
+                formOne.get('fullName')?.invalid &&
+                formOne.get('fullName')?.touched
+              "
+            >
+              <span
+                *ngIf="formOne.get('fullName')?.errors?.['required']"
+                class="text-danger small"
+                >Full-name is required</span
+              >
+              <span
+                *ngIf="formOne.get('fullName')?.errors?.['minlength']"
+                class="text-danger small"
+                >Minimum length must be 10</span
+              >
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <input
+              type="text"
+              class="form-control my-2"
+              placeholder="email"
+              required
+              formControlName="email"
+              [class.is-valid]="
+                formOne.get('email')?.valid && formOne.get('email')?.dirty
+              "
+              [class.is-invalid]="
+                formOne.get('email')?.invalid && formOne.get('email')?.touched
+              "
+            />
+            <div
+              *ngIf="
+                formOne.get('email')?.invalid && formOne.get('email')?.touched
+              "
+            >
+              <span
+                *ngIf="formOne.get('email')?.errors?.['required']"
+                class="text-danger small"
+                >Email is required</span
+              >
+              <span
+                *ngIf="formOne.get('email')?.errors?.['email']"
+                class="text-danger small"
+                >Enter a valid email</span
+              >
+            </div>
+          </div>
+
+          <div class="text-start">
+            <button
+              class="w-50 my-3 border-0 p-2 rounded btn btn-success"
+              [disabled]="go.invalid"
+              (click)="goOne()"
+            >
+              NEXT
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+       <!-- Form Two -->
+       <form [formGroup]="formTwo" #go2="ngForm" *ngIf="form1">
+            <div class="col-6 mx-auto border rounded-2 p-4">
+              <!-- <hr /> -->
+              <h4 class="text-center text-success mb-4">FORM TWO</h4>
+              <hr style="margin-top: -20px" />
+        
+              <form [formGroup]="formTwo" #go="ngForm">
+                <div class="row">
+                  <div class="col-sm-12 col-md-6 col-lg-6">
+                    <input
+                      type="text"
+                      class="form-control my-2"
+                      placeholder="City"
+                      required
+                      formControlName="City"
+                      minlength="3"
+                      [class.is-valid]="
+                        formTwo.get('City')?.valid && formTwo.get('City')?.dirty
+                      "
+                      [class.is-invalid]="
+                        formTwo.get('City')?.invalid && formTwo.get('City')?.touched
+                      "
+                    />
+        
+                    <div
+                      *ngIf="
+                        formTwo.get('City')?.invalid && formTwo.get('City')?.touched
+                      "
+                    >
+                      <span
+                        *ngIf="formTwo.get('City')?.errors?.['required']"
+                        class="text-danger small"
+                        >City is required</span
+                      >
+                      <span
+                        *ngIf="formTwo.get('City')?.errors?.['minlength']"
+                        class="text-danger small"
+                        >Minimum length must be 3</span
+                      >
+                    </div>
+                  </div>
+        
+                  <div class="col-sm-12 col-md-6 col-lg-6">
+                    <input
+                      type="text"
+                      class="form-control my-2"
+                      placeholder="State"
+                      required
+                      minlength="3"
+                      formControlName="State"
+                      [class.is-valid]="
+                        formTwo.get('State')?.valid && formTwo.get('State')?.dirty
+                      "
+                      [class.is-invalid]="
+                        formTwo.get('State')?.invalid && formTwo.get('State')?.touched
+                      "
+                    />
+                    <div
+                      *ngIf="
+                        formTwo.get('State')?.invalid && formTwo.get('State')?.touched
+                      "
+                    >
+                      <span
+                        *ngIf="formTwo.get('State')?.errors?.['required']"
+                        class="text-danger small"
+                        >Password is required</span
+                      >
+                      <span
+                        *ngIf="formTwo.get('State')?.errors?.['minlength']"
+                        class="text-danger small"
+                        >The minlength is 3</span
+                      >
+                    </div>
+                  </div>
+        
+                  <div class="text-start">
+                    <button
+                      class="w-50 my-3 border-0 p-2 rounded btn btn-warning"
+                      [disabled]="go.invalid"
+                      (click)="goThree()"
+                    >
+                      NEXT
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+    </form>
+
+
+     <!-- Form Three -->
+     <form [formGroup]="formThree" #go3="ngForm" *ngIf="form3">
+          <div class="col-6 mx-auto border rounded-2 p-4">
+            <!-- <hr /> -->
+            <h4 class="text-center text-success mb-4">FORM THREE</h4>
+            <hr style="margin-top: -20px" />
+      
+            <form [formGroup]="formThree" #go="ngForm">
+              <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                  <input
+                    type="number"
+                    class="form-control my-2"
+                    placeholder="age"
+                    required
+                    formControlName="age"
+                    minlength="2"
+                    [class.is-valid]="
+                      formThree.get('age')?.valid && formThree.get('age')?.dirty
+                    "
+                    [class.is-invalid]="
+                      formThree.get('age')?.invalid && formThree.get('age')?.touched
+                    "
+                  />
+      
+                  <div
+                    *ngIf="
+                      formThree.get('age')?.invalid && formThree.get('age')?.touched
+                    "
+                  >
+                    <span
+                      *ngIf="formThree.get('age')?.errors?.['required']"
+                      class="text-danger small"
+                      >Age is required</span
+                    >
+                    <span
+                      *ngIf="formThree.get('age')?.errors?.['minlength']"
+                      class="text-danger small"
+                      >Minimum length must be 2</span
+                    >
+                  </div>
+                </div>
+      
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                  <input
+                    type="text"
+                    class="form-control my-2"
+                    placeholder="Password"
+                    required
+                    minlength="3"
+                    formControlName="password"
+                    [class.is-valid]="
+                      formThree.get('password')?.valid && formThree.get('password')?.dirty
+                    "
+                    [class.is-invalid]="
+                      formThree.get('password')?.invalid && formThree.get('password')?.touched
+                    "
+                  />
+                  <div
+                    *ngIf="
+                      formThree.get('password')?.invalid && formThree.get('password')?.touched
+                    "
+                  >
+                    <span
+                      *ngIf="formThree.get('password')?.errors?.['required']"
+                      class="text-danger small"
+                      >Password is required</span
+                    >
+                    <span
+                      *ngIf="formThree.get('password')?.errors?.['minlength']"
+                      class="text-danger small"
+                      >The minlength is 3</span
+                    >
+                  </div>
+                </div>
+      
+                <div class="text-start">
+                  <button
+                    class="w-50 my-3 border-0 p-2 rounded btn btn-dark"
+                    [disabled]="go.invalid"
+                    (click)="submit()"
+                  >
+                    SUBMIT
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+  </form>
+  </div>
+</div>
+
+<div class="fixed-bottom">
+  <app-footer></app-footer>
+</div>

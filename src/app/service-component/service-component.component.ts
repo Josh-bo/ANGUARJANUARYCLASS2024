@@ -11,8 +11,13 @@ import { LoginServiceService } from '../Services/login-service.service';
 export class ServiceComponentComponent {
   constructor(public service : LoginServiceService ){}
 
+  public item = "";
   public user = "New Joshua" ;
   public nameFromService : string = ""
+
+   returnItem(user:any){
+    return this.item;
+  }
 
   ngOnInit(){
     console.log(this.service.returnItem(this.user));

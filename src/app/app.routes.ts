@@ -12,6 +12,10 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { studentGuardGuard } from './guards/student-guard.guard';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
+import { ReactiveDrivenFormComponent } from './reactive-driven-form/reactive-driven-form.component';
+import { FormsCombinationComponent } from './forms-combination/forms-combination.component';
+import { BehaviorSubjectParentComponent } from './behavior-subject-parent/behavior-subject-parent.component';
+import { PipeComponent } from './pipe/pipe.component';
 
 
 export const routes: Routes = [
@@ -29,6 +33,10 @@ export const routes: Routes = [
     {path: 'signIn', component: SignInComponent},
     {path: 'service', component: ServiceComponentComponent},
     {path: 'form', component: TemplateDrivenFormComponent},
+    {path: 'form2', component: ReactiveDrivenFormComponent},
+    {path: 'comForms', component: FormsCombinationComponent},
+    {path: 'behavior', component: BehaviorSubjectParentComponent},
+    {path: 'pipe', component: PipeComponent},
     {path: 'dashboard', children: [
         {path: '', component: DashboardComponent},
         {path: 'settings', component: SettingsComponent}

@@ -58,15 +58,26 @@
               <span
                 *ngIf="cityName?.errors?.['minlength']"
                 class="text-center text-danger small"
-                >The minimum length is 3</span>
+                >The minimum length is 3</span
+              >
             </div>
           </div>
 
           <div class="col-sm-12 col-md-6 col-lg-6">
-            <input type="checkbox" class="my-2" [(ngModel)]="conMe" name="conMe" #newId="ngModel" [class.is-touched]="newId.touched" required>
+            <input
+              type="checkbox"
+              class="my-2"
+              [(ngModel)]="conMe"
+              name="conMe"
+              #newId="ngModel"
+              [class.is-touched]="newId.touched"
+              required
+            />
             <span class="text-primary small2">Terms and condition</span>
             <div *ngIf="newId.touched">
-              <span class="text-center text-danger small" *ngIf="!newId.valid">Condition is required</span>
+              <span class="text-center text-danger small" *ngIf="!newId.valid"
+                >Condition is required</span
+              >
             </div>
           </div>
 
@@ -75,13 +86,8 @@
           <div>pristine: {{newId.pristine}}</div>
           <div>touched: {{newId.touched}}</div>
           <div>untouched: {{newId.untouched}}</div> -->
-          
 
-    
-          <button
-            class="btn btn-success w-100 my-3"
-            [disabled]="allForms.invalid"
-          >
+          <button class="btn btn-info w-100 my-3" [disabled]="allForms.invalid">
             Submit
           </button>
         </div>

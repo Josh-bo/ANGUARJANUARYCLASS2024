@@ -1,0 +1,10 @@
+<p>behavior-child1 works!</p>
+<div *ngFor="let item of behaviorArray" (click)="sendItem(item)">
+    <div class="shadow my-2 p-3 rounded">
+        <p>{{item.firstName}}</p>
+        <p>{{item.lastName}}</p>
+        <p>{{item.age}}</p>
+        <p>{{item.email}}</p>
+        <!-- <button class="btn btn-warning">Edit</button> -->
+    </div>
+</div>
