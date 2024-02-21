@@ -16,6 +16,7 @@ import { ReactiveDrivenFormComponent } from './reactive-driven-form/reactive-dri
 import { FormsCombinationComponent } from './forms-combination/forms-combination.component';
 import { BehaviorSubjectParentComponent } from './behavior-subject-parent/behavior-subject-parent.component';
 import { PipeComponent } from './pipe/pipe.component';
+import { EventEmitterParentComponent } from './event-emitter-parent/event-emitter-parent.component';
 
 
 export const routes: Routes = [
@@ -31,6 +32,7 @@ export const routes: Routes = [
 
     {path: 'signUp', component: SignUpComponent},
     {path: 'signIn', component: SignInComponent},
+    {path: 'eventParent', component: EventEmitterParentComponent},
     {path: 'service', component: ServiceComponentComponent},
     {path: 'form', component: TemplateDrivenFormComponent},
     {path: 'form2', component: ReactiveDrivenFormComponent},

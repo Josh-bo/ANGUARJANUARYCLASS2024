@@ -1,0 +1,10 @@
+<div class="text-primary">
+    <p class="text-center">Event-emitter-child works!</p>
+    <hr>
+    <div>{{collectText}}</div>
+
+    <div class="d-flex">
+        <input type="text" [(ngModel)]="sendRes" class="form-control">
+        <button class="btn btn-primary ms-1" (click)="sendBack()">Send</button>
+    </div>
+</div>

@@ -16,20 +16,14 @@ export class BehaviorChild2Component {
   public msg : string = "No Details is clicked";
 
   ngOnInit(){
-    // console.log(this.behavior.behavior.value);
     this.behavior.behavior.subscribe(response => {
-      // console.log(response);
       this.behavior_obj = response;
-      console.log(response);
-      
-      this.confirm = false;
-      // this.msg = "No Details is clicked";
-
+      // this.confirm = false;
     })    
   }
   show(){
       this.confirm = true;
-      // console.log(this.confirm);
+      console.log(this.confirm);
       
       this.msg = "";    
       console.log(this.msg);
